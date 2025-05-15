@@ -18,7 +18,7 @@ useEffect(()=>{
   fetch(`https://fakestoreapi.com/products`)
   .then(response => response.json())
   .then(data => setProduct(data));
-})
+},[])
 
 
   return (
@@ -80,7 +80,7 @@ useEffect(()=>{
           <div className="w-[19%] rounded bg-white " key={a.id}>
             <img src={a.image} className="w-[200px] h-[180px]" />
             <div className="px-2 h-[40px] overflow-hidden py-3">
-          <h5 className="name"><Link href={`details/${a.id}`}>{a.title}</Link></h5>
+          <h5 className="name"><Link href={`/details/${a.id}`}>{a.title}</Link></h5>
            </div>
           <p className="text-[rgb(248,86,6)] ms-2 font-bold">Rs. {a.price}</p>
           <button className="btn m-2 p-2 text-[12px] rounded text-white bg-[rgb(248,86,6)]">Add to Cart</button>

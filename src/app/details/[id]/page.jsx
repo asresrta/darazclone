@@ -1,14 +1,15 @@
 "use client"
-import React, { useEffect, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import "@/app/globals.css";
 
 function page({params}) {
+  const { id } = use(params);
     let [product,setProduct]=useState([])
     useEffect(()=>{
-      fetch(`https://fakestoreapi.com/products/${params.id}`)
+      fetch(`https://fakestoreapi.com/products/${id}`)
       .then(response => response.json())
       .then(data => setProduct(data));
-  },[params.id])
+  },[])
     
   return (
     <>
