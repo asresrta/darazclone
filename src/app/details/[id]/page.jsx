@@ -9,7 +9,7 @@ function page({params}) {
       fetch(`https://fakestoreapi.com/products/${id}`)
       .then(response => response.json())
       .then(data => setProduct(data));
-  },[])
+  },[id])
     
   return (
     <>
