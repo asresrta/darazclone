@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+.container{
+    width:1200px;
+}
+
+header{
+    background: #F85606;
+}
+.icon{
+    background: #FFE1D2;
+}
+
+footer{
+    color:rgb(107, 104, 104)
+}
+
+footer li{
+    font-size: 13px;
+}
+.name{
+        display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.top li{
+    padding: 5px;
+    color: black;
+}
+
+.line{
+    width:200px;
+    height:1px;
+    background: gray;
+}
+
+
+
