@@ -12,12 +12,14 @@ header{
 }
 
 footer{
-    color:rgb(107, 104, 104)
-}
+    color:rgb(107, 104, 104);
 
-footer li{
+    li{
     font-size: 13px;
 }
+}
+
+
 .name{
         display: block;
     white-space: nowrap;

@@ -1,11 +1,13 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useContext } from 'react';
 import { IoSearchOutline } from "react-icons/io5";
 import { IoCartOutline } from "react-icons/io5";
 
 
 
 function Header() {
+
+
   return (
     <>
     <header className='text-white'>

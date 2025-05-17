@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "./Component/Header";
 import Footer from "./Component/Footer";
 
+
 const roboto = Roboto({
   weight: '400',
   subsets: ['latin'],
@@ -19,10 +20,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={roboto.className}>
-      <body > 
+      <body> 
+        
         <Header/>
         {children}
         <Footer/>
+        
       </body>
     </html>
   );

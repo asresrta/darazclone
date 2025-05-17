@@ -6,9 +6,11 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { img } from "./Banner";
-import { useEffect, useState } from "react";
+import {useEffect, useState } from "react";
 import "./globals.css";
 import Link from "next/link";
+
+
 
 
 
@@ -23,20 +25,22 @@ useEffect(()=>{
 
   return (
   <>
+
+
   <section className="top">
     <div className="container mx-auto flex gap-5 py-4 justify-between">
       <div className="cat w-[350px] h-[320px] border text-[#F85606] rounded-3xl p-3 shadow-2xl  ">
         <h2 className="font-bold text-2xl text-[#F85606] py-3">Category</h2>
         <ul className="">
-          <li><Link href="/categories/electronics" >Electronics</Link></li>
+          <li><Link href={`/category/electronics`}>Electronics</Link></li>
           <div className="line"></div>
-          <li><Link href="/categories/jewelery" >Jewelery</Link></li>
+          <li><Link href={`/category/jewelery`} >Jewelery</Link></li>
           <div className="line"></div>
-          <li><Link href="/categories/men's clothing" >Men's Clothing</Link></li>
+          <li><Link href={`/category/men's clothing`} >Men's Clothing</Link></li>
           <div className="line"></div>
-          <li><Link href="/categories/women's clothing" >Women's Clothing</Link></li>
+          <li><Link href={`/category/women's clothing`} >Women's Clothing</Link></li>
           <div className="line"></div>
-          <li><Link href="/categories/furniture" >Furniture</Link><br/>
+          <li><Link href={`/category/furniture`} >Furniture</Link><br/>
           <p className="text-[#F85606] text-[15px]">[Not in stock]</p></li>
           
         </ul>
@@ -105,10 +109,10 @@ useEffect(()=>{
           <div className="w-[19%] rounded bg-white" key={a.id}>
             <img src={a.image} className="w-[200px] h-[180px]" />
             <div className="px-2 h-[40px] overflow-hidden py-3">
-          <h5 className="name">{a.title}</h5>
+          <h5 className="name"><Link href={`/details/${a.id}`}>{a.title}</Link></h5>
            </div>
           <p className="text-[rgb(248,86,6)] ms-2 font-bold">Rs. {a.price}</p>
-          <button className="btn m-2 p-2 text-[12px] rounded text-white bg-[rgb(248,86,6)]">Add to Cart</button>
+          <button className="btn m-2 p-2 text-[12px] rounded text-white bg-[rgb(248,86,6)]" onClick={()=>dispatch({type:'add',payload:a})}>Add to Cart</button>
 
           </div>
           
