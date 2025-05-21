@@ -4,7 +4,7 @@ function Footer() {
   return (
     <>
       <footer className='bg-[#F4F4F6] py-5'>
-        <div className="container mx-auto flex gap-[180px]">
+        <div className="container mx-auto flex px-2 gap-5 lg:gap-[180px]">
           <div>
             <h2 className='py-3 font-bold'>CUSTOMER CARE</h2>
             <ul>

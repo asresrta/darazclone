@@ -25,7 +25,7 @@ function page({params}) {
       <div className="bg-[#F5F5F5] my-3 rounded">
        <div className="flex flex-wrap justify-between gap-x-1  gap-y-5 py-5 px-3 ">
         {product.map((a)=>(
-          <div className="w-[32%] rounded bg-white " key={a.id}>
+          <div className="w-[48%] lg:w-[32%] rounded bg-white " key={a.id}>
             <div className='items-center'>
             <img src={a.image} className="w-[200px] h-[180px] px-3" />
 
