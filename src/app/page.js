@@ -64,7 +64,7 @@ useEffect(()=>{
         className="mySwiper rounded-3xl "
       >
         {img.map((a)=>(
-          <SwiperSlide key={a.id}><img className="h-[240px] md:h-[320px] lg:h-[320px] " src={a.img} /></SwiperSlide>
+          <SwiperSlide key={a.id}><img className="h-[200px] md:h-[320px] lg:h-[320px] " src={a.img} /></SwiperSlide>
         ))}
       </Swiper>
       </div>
@@ -72,14 +72,11 @@ useEffect(()=>{
     <div className="video h-[50px] lg:h-[150px]">
       <img className="" src="https://img.lazcdn.com/us/domino/44c6afea-b356-4ed4-8086-d6cd7f47435f_NP-1920-500.gif_2200x2200q80.gif"/>
     </div>
-
   </section>
 
   <section className="latestproducts py-3">
     <div className="container mx-auto">
-     
         <h2 className="font-bold text-3xl p-4 rounded ">Latest Products</h2>
-     
       <div className="bg-[#F5F5F5] my-3 rounded shadow-2xl con">
        <div className="flex flex-wrap justify-between gap-x-1  gap-y-5 py-5 px-3 ">
         {product.slice(0,10).map((a)=>(
@@ -89,23 +86,18 @@ useEffect(()=>{
           <h5 className="name"><Link href={`/details/${a.id}`}>{a.title}</Link></h5>
            </div>
           <p className="text-[rgb(248,86,6)] ms-2 font-bold">Rs. {a.price}</p>
-          <button className="btn m-2 p-2 text-[12px] rounded text-white bg-[rgb(248,86,6)]">Add to Cart</button>
-
-          </div>
-          
+          <button className="btn m-2 p-2 text-[12px] rounded text-white bg-[rgb(248,86,6)] hover:bg-[#0057B7] hover:scale-[1.1]">Add to Cart</button>
+          </div> 
         ))}
          </div> 
         </div>
       </div>
-   
   </section>
 
   <section className="allproducts py-3">
     <div className="container mx-auto">
-     
         <h2 className="font-bold text-3xl p-4 rounded">All Products</h2>
-     
-      <div className="bg-[#F5F5F5] my-3 rounded">
+        <div className="bg-[#F5F5F5] my-3 rounded">
        <div className="flex flex-wrap justify-evenly gap-x-1  gap-y-5 py-5 px-3 ">
         {product.map((a)=>(
           <div className="w-[48%] md:w-[32%] lg:w-[19%] rounded bg-white" key={a.id}>
@@ -114,15 +106,12 @@ useEffect(()=>{
           <h5 className="name"><Link href={`/details/${a.id}`}>{a.title}</Link></h5>
            </div>
           <p className="text-[rgb(248,86,6)] ms-2 font-bold">Rs. {a.price}</p>
-          <button className="btn m-2 p-2 text-[12px] rounded text-white bg-[rgb(248,86,6)]" >Add to Cart</button>
-
-          </div>
-          
+          <button className="btn m-2 p-2 text-[12px] rounded text-white bg-[rgb(248,86,6)] hover:bg-[#0057B7] hover:scale-[1.1]" >Add to Cart</button>
+          </div>  
         ))}
          </div> 
         </div>
       </div>
-   
   </section>
 
   

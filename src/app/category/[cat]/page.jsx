@@ -34,11 +34,9 @@ function page({params}) {
           <h5 className="name"><Link href={`/details/${a.id}`}>{a.title}</Link></h5>
            </div>
           <p className="text-[rgb(248,86,6)] ms-2 font-bold">Rs. {a.price}</p>
-          <button className="btn m-2 p-2 text-[12px] rounded text-white bg-[rgb(248,86,6)]">Add to Cart</button>
-
+          <button className="btn m-2 p-2 text-[12px] rounded text-white bg-[rgb(248,86,6)] hover:bg-[#0057B7] hover:scale-[1.1]">Add to Cart</button>
           </div>
-          
-        ))}
+                ))}
          </div> 
         </div>
       </div>
