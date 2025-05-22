@@ -61,6 +61,12 @@ footer{
     background: gray;
 }
 
+.linee{
+    width:290px;
+    height:1px;
+    background: gray;
+}
+
 
  @media (min-width: 640px) {
     .container {
@@ -95,6 +101,16 @@ footer{
 }
 
 .categoriesShow.show{
-  display:block;
+  left:0;
+  transition: 0.9s;
+}
+.accountShow, .categoriesShow{
+  left:-100%;
+  transition:0.9s;
+}
+
+.accountShow.show{
+  left:0;
+  transition: 0.9s;
 }
 
