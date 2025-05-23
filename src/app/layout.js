@@ -2,6 +2,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import Header from "./Component/Header";
 import Footer from "./Component/Footer";
+import ContextProvider from "./ContextProvider";
 
 
 const roboto = Roboto({
@@ -21,10 +22,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={roboto.className}>
       <body> 
-        
+        <ContextProvider>
         <Header/>
         {children}
         <Footer/>
+        </ContextProvider>
         
       </body>
     </html>

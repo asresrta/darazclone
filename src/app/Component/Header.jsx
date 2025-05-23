@@ -13,10 +13,13 @@ import { CiHeart } from "react-icons/ci";
 import { GrDocumentText } from "react-icons/gr";
 import { LuMessageSquareText } from "react-icons/lu";
 import { IoIosHelpCircleOutline } from "react-icons/io";
+import { CartContext } from '../ContextProvider';
 
 
 
 function Header() {
+
+
    useEffect(()=>{
 window.addEventListener('scroll',()=>{
         if(window.scrollY>40){
@@ -67,6 +70,7 @@ window.addEventListener('scroll',()=>{
       
    },[]) 
 
+  const {state}=useContext(CartContext);
     
       
     
@@ -91,7 +95,11 @@ window.addEventListener('scroll',()=>{
             <div className='p-3 h-[45px] icon hidden md:block lg:block'>
                 <IoSearchOutline color='#F85606' size={20} />
             </div>
-            <div className='ms-5 pt-3 hidden md:block lg:block'><IoCartOutline size={30} /></div>
+            <div className='ms-5 pt-3 hidden md:flex lg:flex relative'>
+              <div className=''><Link href={'/cart/'}> <IoCartOutline size={30} /></Link>
+              </div>
+              <div className='absolute w-3 h-3 -right-1 top-2 bg-white rounded-full text-[#F85606] flex justify-center items-center text-[12px]'>{state.cart.length}</div>
+              </div>
 
             </div>
             

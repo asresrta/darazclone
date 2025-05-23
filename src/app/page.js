@@ -6,15 +6,17 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { img } from "./Banner";
-import {useEffect, useState } from "react";
+import {useContext, useEffect, useState } from "react";
 import "./globals.css";
 import Link from "next/link";
+import { CartContext } from "./ContextProvider";
 
 
 
 
 
 export default function Home() {
+
 let [product,setProduct]=useState([])
 useEffect(()=>{
   fetch(`https://fakestoreapi.com/products`)
@@ -23,6 +25,8 @@ useEffect(()=>{
   .then(data => {setProduct(data);setLoading(false)})
   .catch(() => setError(true));
 },[])
+
+    const {dispatch}=useContext(CartContext);
 
 
   return (
@@ -64,7 +68,7 @@ useEffect(()=>{
         className="mySwiper rounded-3xl "
       >
         {img.map((a)=>(
-          <SwiperSlide key={a.id}><img className="h-[200px] md:h-[320px] lg:h-[320px] " src={a.img} /></SwiperSlide>
+          <SwiperSlide key={a.id}><img className="h-[180px] md:h-[320px] lg:h-[320px] " src={a.img} /></SwiperSlide>
         ))}
       </Swiper>
       </div>
@@ -86,7 +90,7 @@ useEffect(()=>{
           <h5 className="name"><Link href={`/details/${a.id}`}>{a.title}</Link></h5>
            </div>
           <p className="text-[rgb(248,86,6)] ms-2 font-bold">Rs. {a.price}</p>
-          <button className="btn m-2 p-2 text-[12px] rounded text-white bg-[rgb(248,86,6)] hover:bg-[#0057B7] hover:scale-[1.1]">Add to Cart</button>
+          <button className="btn m-2 p-2 text-[12px] rounded text-white bg-[rgb(248,86,6)] hover:bg-[#0057B7] hover:scale-[1.1]" onClick={()=>dispatch({type:'add',payload:a})}>Add to Cart</button>
           </div> 
         ))}
          </div> 
@@ -106,7 +110,7 @@ useEffect(()=>{
           <h5 className="name"><Link href={`/details/${a.id}`}>{a.title}</Link></h5>
            </div>
           <p className="text-[rgb(248,86,6)] ms-2 font-bold">Rs. {a.price}</p>
-          <button className="btn m-2 p-2 text-[12px] rounded text-white bg-[rgb(248,86,6)] hover:bg-[#0057B7] hover:scale-[1.1]" >Add to Cart</button>
+          <button className="btn m-2 p-2 text-[12px] rounded text-white bg-[rgb(248,86,6)] hover:bg-[#0057B7] hover:scale-[1.1] " onClick={()=>dispatch({type:'add',payload:a})} >Add to Cart</button>
           </div>  
         ))}
          </div> 

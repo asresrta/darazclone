@@ -1,10 +1,11 @@
 "use client";
-import React, { use, useEffect, useState } from "react";
+import React, { use, useContext, useEffect, useState } from "react";
 import "@/app/globals.css";
 import { TbTruckDelivery } from "react-icons/tb";
 import { PiMoneyWavyBold } from "react-icons/pi";
 import { GiReturnArrow } from "react-icons/gi";
 import { FiShieldOff } from "react-icons/fi";
+import { CartContext } from "@/app/ContextProvider";
 
 
 
@@ -17,6 +18,8 @@ function page({ params }) {
       .then((response) => response.json())
       .then((data) => setProduct(data));
   }, [id]);
+
+    const {dispatch}=useContext(CartContext)
 
   return (
     <>
@@ -38,7 +41,7 @@ function page({ params }) {
               Buy Now
             </button>
 
-            <button className="btn px-5 py-2 text-[14px]  text-white bg-[rgb(248,86,6)]">
+            <button className="btn px-5 py-2 text-[14px]  text-white bg-[rgb(248,86,6)]" onClick={()=>dispatch({type:'add',payload:product})}>
               Add to Cart
             </button>
           </div>
