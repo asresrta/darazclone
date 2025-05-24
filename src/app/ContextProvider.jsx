@@ -6,6 +6,7 @@ export const CartContext=createContext();
 export let reducer=(state,action)=>{
     switch(action.type){
         case 'add':return{cart:[...state.cart,action.payload]}
+        case 'remove':return{cart: state.cart.filter((a)=>a.id !==action.payload.id)}
     }
 }
 
